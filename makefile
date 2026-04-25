@@ -13,7 +13,7 @@ REPO_FULL_NAME := $(REPO_OWNER)/$(REPO_NAME)
 IMAGE_NAME := ghcr.io/$(REPO_FULL_NAME)
 
 # Here we default to an image tag that makes it obvious that it was a local build, and that it isn't coming from CI
-IMAGE_TAG:=$(shell whoami)-$(shell git describe --always)-dirty
+IMAGE_TAG:=$(shell whoami)-$(shell git describe --always --dirty)
 
 # These variables control what images and tags are used for the various linting tasks
 MD_LINT_IMAGE:=ghcr.io/igorshubovych/markdownlint-cli:v0.44.0
